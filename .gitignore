@@ -59,7 +59,6 @@ spy_options_iv.csv
 .ipynb_checkpoints
 *.ipynb~
 data/
-*.csv
 *.tsv
 *.json
 *.parquet
