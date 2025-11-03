@@ -1,0 +1,17 @@
+\frametitle{Mask Curriculum (Pseudo-code)}
+\begin{lstlisting}
+for epoch in range(E):
+    if epoch < warmup:
+        m_in, m_loss = m, m
+    else:
+        keep = Bernoulli(p).sample(m.shape)  # p ~ U(0.2, 0.8)
+        m_in   = m * keep                    # hide some observed
+        m_loss = m * (1 - keep)              # eval on hidden observed
+        if m_loss.sum() < min_obs: m_loss = m
+
+    x_in = concat([x * m_in, m_in], dim=1)
+    x_hat, mu, logvar = VAE(x_in)
+    L = maskedMSE(x, x_hat, m_loss) + beta*KL(mu,logvar)
+        + l_tv*TV(x_hat) + l_cal*CalMono(x_hat)
+    step(L)
+\end{lstlisting}

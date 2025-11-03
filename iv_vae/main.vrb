@@ -1,0 +1,26 @@
+\frametitle{Data \& Grid (Done)}
+\begin{columns}[T]
+\begin{column}{0.58\linewidth}
+    \textbf{Universe.} SPY options (2019--2024).\\
+    \textbf{Grid.} $64{\times}64$, $k=\ln(K/S)\in[-0.5,0.5]$, $T\in[7,365]\,$days.\\
+    \textbf{Per day.} Field $x\in\mathbb{R}^{64\times64}$, mask $m\in\{0,1\}^{64\times64}$.\\
+    \textbf{Norm.} Global min–max on observed cells.\\
+    \textbf{Split.} Time-ordered 70/15/15.\\[4pt]
+    \textbf{Artifact.} \texttt{spy\_iv\_2019\_2024.pt} (\texttt{x, mask, dates, T\_grid, k\_grid, meta})
+\end{column}
+\begin{column}{0.42\linewidth}
+\textbf{Dataset stats (fill)}\\[-4pt]
+\small
+\begin{tabular}{l r}
+    \toprule
+    Days total         & \, ---             \\
+    Train / Val / Test & \, --- / --- / --- \\
+    Mean obs. frac.    & \, ---             \\
+    Min/Max obs. frac. & \, --- / ---       \\
+    IV range (obs)     & \, [---, ---]      \\
+    \bottomrule
+\end{tabular}\\[6pt]
+\textbf{Mask density over time}\\
+\phtall % replace with \includegraphics[width=\linewidth]{mask_density_over_time.png}
+</column>
+\end{columns}

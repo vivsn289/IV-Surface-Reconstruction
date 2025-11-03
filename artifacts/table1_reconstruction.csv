@@ -1,0 +1,4 @@
+Model,Split,Masked-MAE,MSE,Notes
+Bicubic (baseline),Val,0.000000,0.000000,interpolation
+β-VAE (β=2),Val,0.077463,0.010020,warmup/best
+β-VAE (β=2),Test,0.075663,0.010025,best ckpt
