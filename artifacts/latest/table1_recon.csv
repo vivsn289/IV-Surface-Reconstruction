@@ -1,0 +1,5 @@
+split,model,masked_mae,mse
+val,Bicubic,0.0,0.0
+val,Coord-VAE,0.07763554342091084,0.009799812687560916
+test,Bicubic,0.0,0.0
+test,Coord-VAE,0.07296779379248619,0.00923277554102242
